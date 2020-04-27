@@ -1,0 +1,117 @@
+.player{
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    width: 50vw;
+    height: 100vh;
+    background: linear-gradient(166deg, rgba(150,156,72,0.3426412801448705) 0%, rgba(9,121,48,0.9252743333661589) 25%, rgba(0,212,255,0.45188497762386204) 100%);
+    
+}
+.banner{
+    position: relative;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+}
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 1s ease;
+    opacity: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.blur i{
+    font-size: 8rem;
+    transition: all .5s;
+    color: rgba(255, 255, 255, 0.5);
+}
+.banner:hover .blur,.banner:hover i{
+    opacity: 1; ;
+}
+
+.title{
+    display: inline-block;
+    width: fit-content;
+
+    position: absolute;
+   
+    color: #2d3436;
+
+    font-size: 24px;
+    font-weight: 500;
+    animation: slide 8s infinite linear;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+.control{
+    margin-top: 50px    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    display: none;
+}
+.control label i{
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ecf0f187 ;
+}
+audio{
+    display: block;
+    -webkit-appearance: none;
+    width: 30vw;
+    height: 25px;
+    outline: none;
+    opacity: 0.5;
+}
+audio::-webkit-media-controls-panel{
+    background-color:transparent ;
+    border-radius: 0 !important;
+}
+
+audio::-webkit-media-controls-play-button{
+    display: none !important;
+    overflow: hidden;
+}
+@keyframes spin{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+@keyframes slide {
+    0%{ left: -40%;}
+    100% { left: 100%; }
+}
+
+@media only screen and (max-width: 576px) {
+    .player{
+        width: 100vw;
+    }
+    audio{
+        width: 70vw;
+    }
+  }
+
+  audio::-webkit-media-controls-panel{
+      background-color: rgba(0, 128, 0, 0.664) ;
+  }
+
+.spin{
+    animation: spin 16s infinite linear;
+}
