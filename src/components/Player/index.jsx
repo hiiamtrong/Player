@@ -3,10 +3,11 @@ import "./Player.css";
 import classNames from 'classnames'
 export default function (props) {
   let {  song, changeSong,index } = props;
-  let [status,setStatus] = useState(true);
+  let [status,setStatus] = useState(false);
   let audioRef= React.createRef()
   function HandleChangeSong(index) {
     changeSong(index);
+    setStatus(true)
   }
   function HandleControlAudio(e){
       if(status){
