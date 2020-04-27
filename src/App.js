@@ -3,10 +3,17 @@ import './App.css';
 import Player from './components/Player/index'
 import songlist from './components/music/music'
 function App() {
-  let [song,setSong] = useState(songlist[0])
+  let [index,setIndex] = useState(0)
+  let song = songlist[index]
   function ChangeSong(index){ 
-
-    setSong(songlist[index])
+    if(index>= songlist.length ){
+      setIndex(0)
+    }else if( index<=0 ){
+      setIndex(0)
+    }else{
+    setIndex(index)
+    }
+    
   }
   return (
     <div className="App" style={
@@ -14,7 +21,7 @@ function App() {
         backgroundImage : `url('./bg.jpeg')`
       }
     }>
-      <Player song={song} changeSong ={ChangeSong}></Player>
+      <Player song={song} changeSong ={ChangeSong} index={index}></Player>
     </div>
   );
 }

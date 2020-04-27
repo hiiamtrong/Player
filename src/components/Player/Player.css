@@ -19,6 +19,7 @@
     height: 300px;
     margin: 10px auto;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     transition: all 0.5s;
 }

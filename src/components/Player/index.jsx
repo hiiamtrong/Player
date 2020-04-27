@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Player.css";
 import classNames from 'classnames'
 export default function (props) {
-  let {  song, changeSong } = props;
-  console.log(song);
-  let [status,setStatus] = useState(false);
+  let {  song, changeSong,index } = props;
+  let [status,setStatus] = useState(true);
   let audioRef= React.createRef()
   function HandleChangeSong(index) {
     changeSong(index);
@@ -18,6 +17,14 @@ export default function (props) {
       }
       setStatus(!status)
         
+  }
+  useEffect(()=>{
+    audioRef.current.play()
+  },[song])
+  function End(index){
+    if(audioRef.current.ended ==true){
+      HandleChangeSong(index+1)
+    }
   }
   return (
     <div className="player">
@@ -42,7 +49,7 @@ export default function (props) {
           <label htmlFor="prev">
             <i class="fas fa-backward"></i>
           </label>
-          <button className="btn" id="prev" onClick={() => HandleChangeSong(0)}>
+          <button className="btn" id="prev" onClick={() => HandleChangeSong(index-1)}>
             Prev
           </button>
           <audio
@@ -50,11 +57,12 @@ export default function (props) {
             src={song.src}
             controlsList="nodownload noremoteplayback"
             ref={audioRef}
+            onTimeUpdate={()=>End(index)}
           ></audio>
           <label htmlFor="next">
             <i class="fas fa-forward"></i>
           </label>
-          <button className="btn" id="next" onClick={() => HandleChangeSong(1)}>
+          <button className="btn" id="next" onClick={() => HandleChangeSong(index+1)}>
             Next
           </button>
         </div>
