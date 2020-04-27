@@ -45,6 +45,7 @@ export default function (props) {
           })}></i></div>
         </div>
         <div className="title">{song.title}</div>
+        <div className="singer">{song.singer}</div>
         <div className="control">
           <label htmlFor="prev">
             <i class="fas fa-backward"></i>

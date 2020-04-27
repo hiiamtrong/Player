@@ -6,6 +6,12 @@ let songlist= [
     singer:'buitruonglinh'
 },
 {
+    title:"Hà nội xịn",
+    src: './music/Ha-Noi-Xin-LK.mp3',
+    banner:'./picture/ha-noi-xin.jpg',
+    singer:'LK'
+},
+{
     title:"Một mình ta",
     src: './music/Mot-Minh-Ta-buitruonglinh.mp3',
     banner:'./picture/mot-minh-ta.jpg',

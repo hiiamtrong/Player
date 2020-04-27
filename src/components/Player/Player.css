@@ -60,6 +60,11 @@
     animation: slide 8s infinite linear;
     font-family: 'PT Sans Caption', sans-serif;
 }
+.singer{
+    margin-top: 50px;
+    font-family: 'PT Sans Caption', sans-serif;
+    color: #2d3436;
+}
 .control{
     margin-top: 50px    ;
     display: flex;
