@@ -5,6 +5,7 @@ import songlist from './components/music/music'
 function App() {
   let [index,setIndex] = useState(0)
   let song = songlist[index]
+  document.title = `${song.title} - Player `
   function ChangeSong(index){ 
     if(index>= songlist.length ){
       setIndex(0)
